@@ -1,0 +1,667 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap table extension CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet">
+
+	<style>
+		#table-application>th:first-child, #table-application>td:first-child
+		{
+			position:sticky;
+			left:0px;
+			z-index: 1;
+			background-color: #d6d8db;
+		}
+		#table-application>th:nth-child(2), #table-application>td:nth-child(2)
+		{
+			position:sticky;
+			left:80px;
+			z-index: 1;
+			background-color: #d6d8db;
+		}
+	</style>
+  </head>
+
+  <body>
+	<div id="_top_navbar"></div>
+
+    <div class="container-fluid">
+      <div class="row">
+		<div id="_side_navbar"></div>
+
+		<!-- Editable table -->
+        <main id="contentDashboard" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+			<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+				<h1 class="h2">Dashboard</h1>
+				<div class="btn-toolbar mb-2 mb-md-0">
+					<div class="btn-group mr-2">
+					<button class="btn btn-sm btn-outline-secondary">Share</button>
+					<button class="btn btn-sm btn-outline-secondary">Export</button>
+					</div>
+					<button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+					<span data-feather="calendar"></span>
+					This week
+					</button>
+				</div>
+			</div>
+
+		<div class="card">
+			<h3 class="card-header text-center font-weight-bold text-uppercase py-4">
+			Editable table
+			</h3>
+			<div class="card-body">
+				<div id="table-application" class="table-editable">
+					<span class="table-add float-right mb-3 mr-2"
+					><a href="#!" class="text-success"
+						><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a
+					></span>
+					<table class="table table-bordered table-responsive-md table-sm text-center table-striped">
+					<thead>
+						<tr>
+							<th class="text-center position-sticky"></th>
+							<th class="text-center">Cumulative</th>
+							<th class="text-center">Week 1</th>
+							<th class="text-center">Week 2</th>
+							<th class="text-center">Week 3</th>
+							<th class="text-center">Week 4</th>
+							<th class="text-center">Week 5</th>
+							<th class="text-center">Week 6</th>
+							<th class="text-center">Week 7</th>
+							<th class="text-center">Week 8</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td class="pt-3-half position-sticky">Total Number of Application</td>
+						<td class="pt-3-half">190</td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						</tr>
+						<tr>
+						<td class="pt-3-half position-sticky">Number of Application Approved</td>
+						<td class="pt-3-half">60</td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						</tr>
+						<tr>
+						<td class="pt-3-half position-sticky">Number of Application In Rejected</td>
+						<td class="pt-3-half">35</td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						</tr>
+						<tr>
+						<td class="pt-3-half position-sticky">Number of Application In Process</td>
+						<td class="pt-3-half">95</td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						</tr>
+					</tbody>
+				</table>	
+				<div id="table" class="table-editable">
+					<span class="table-add float-right mb-3 mr-2"
+					><a href="#!" class="text-success"
+						><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a
+					></span>
+					<table class="table table-bordered table-responsive-md table-sm text-center table-striped">
+					<thead>
+						<tr>
+							<th class="text-center"></th>
+							<th class="text-center">Cumulative</th>
+							<th class="text-center">Week 1</th>
+							<th class="text-center">Week 2</th>
+							<th class="text-center">Week 3</th>
+							<th class="text-center">Week 4</th>
+							<th class="text-center">Week 5</th>
+							<th class="text-center">Week 6</th>
+							<th class="text-center">Week 7</th>
+							<th class="text-center">Week 8</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td class="pt-3-half">Approved / Total <br>(percentage)</td>
+						<td class="pt-3-half">190</td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						</tr>
+						<tr>
+						<td class="pt-3-half">Process / total <br>(percentage)</td>
+						<td class="pt-3-half">60</td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						<td class="pt-3-half"></td>
+						</tr>
+					</tbody>
+				</table>	
+
+				<div id="table" class="table-editable">
+					<span class="table-add float-right mb-3 mr-2"
+					><a href="#!" class="text-success"
+						><i class="fas fa-plus fa-2x" aria-hidden="true"></i></a
+					></span>
+					<table class="table table-bordered table-responsive-md table-sm text-center">
+					<thead>
+						<tr>
+							<th class="text-center table-secondary">Amount of money dispersed</th>
+							<th class="text-center table-secondary">Total</th>
+							<th class="text-center table-secondary">Starting</th>
+							<th class="text-center table-secondary">Cumulative</th>
+							<th class="text-center">Week 1</th>
+							<th class="text-center">Week 2</th>
+							<th class="text-center">Week 3</th>
+							<th class="text-center">Week 4</th>
+							<th class="text-center">Week 5</th>
+							<th class="text-center">Week 6</th>
+							<th class="text-center">Week 7</th>
+							<th class="text-center">Week 8</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td class="pt-3-half table-secondary">Program Bakul Makanan</td>
+						<td class="pt-3-half table-secondary">3.2</td>
+						<td class="pt-3-half table-secondary"></td>
+						<td class="pt-3-half table-secondary">1.1</td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						</tr>
+						<tr>
+						<td class="pt-3-half table-secondary">Bantuan Khas OKU</td>
+						<td class="pt-3-half table-secondary">1.5</td>
+						<td class="pt-3-half table-secondary"></td>
+						<td class="pt-3-half table-secondary">0.7</td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						<td class="pt-3-half" contenteditable="true"></td>
+						</tr>
+						<tr>
+						<td class="pt-3-half table-dark">Total</td>
+						<td class="pt-3-half table-dark">4.7</td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark">1.8</td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						<td class="pt-3-half table-dark"></td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				</div>
+			</div>
+			<!-- Editable table -->
+
+        </main>
+
+
+        <main id="contentDashboard" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+              </button>
+            </div>
+          </div>
+
+          <canvas class="my-4" id="dashboardChart" width="900" height="380"></canvas>
+
+
+        </main>
+
+        <main id="contentBudget" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Status</h1>
+          </div>
+
+          <canvas class="my-4" id="statusChart" width="900" height="380"></canvas>
+
+
+        </main>
+
+        <main id="contentBudget" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Budget</h1>
+          </div>
+
+          <canvas class="my-4" id="budgetChart" width="900" height="380"></canvas>
+
+
+        </main>
+
+        <main id="contentBudget" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Total Application Received VS Total Application Approved</h1>
+          </div>
+
+          <canvas class="my-4" id="totalAppApprChart" width="900" height="380"></canvas>
+
+
+        </main>
+		
+        <main id="contentBudget" role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Cumulative Application Received VS Cumulative Application Approved</h1>
+          </div>
+
+          <canvas class="my-4" id="cumulativeAppApprChart" width="900" height="380"></canvas>
+
+
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="./assets/js/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>-->
+    <!--<script src="../../assets/js/vendor/popper.min.js"></script>-->
+    <script src="./assets/js/bootstrap.min.js"></script>
+
+	<script src="https://unpkg.com/bootstrap-table@1.18.3/dist/bootstrap-table.min.js"></script>
+
+	<script>
+		$("#_top_navbar").load("_top_navbar.html");
+		$("#_side_navbar").load("_side_navbar.html");
+		$("#content").load("_dashboard.html");
+
+		function getRandomArbitrary(min, max) {
+			return Math.random() * (max - min) + min;
+		}
+
+		const MONTHS = [
+			'January',
+			'February',
+			'March',
+			'April',
+			'May',
+			'June',
+			'July',
+			'August',
+			'September',
+			'October',
+			'November',
+			'December'
+		];
+
+		const WEEKS = [
+			'Week 1',
+			'Week 2',
+			'Week 3',
+			'Week 4',
+			'Week 5',
+			'Week 6',
+			'Week 7',
+			'Week 8',
+		];
+
+		const INITIATIVE = [
+			'Program Bakul Makanan',
+			'Bantuan Khas OKU'
+		];
+
+	</script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="./assets/js/chart.min.js"></script>
+	<!-- Dashboard Chart -->
+    <script>
+      var ctx = document.getElementById("dashboardChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: MONTHS,
+          datasets: [{
+			label: "Budget",
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034, 10012, 22020, 112233],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+
+	<!-- Status Chart -->
+    <script>
+
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<3;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			labels: [
+				'Process',
+				'Approved',
+				'Rejected'
+			],
+			datasets: [{
+				label: 'Status Chart',
+				data: dataset1,
+				backgroundColor: [
+				'rgb(255, 99, 132)',
+				'rgb(54, 162, 235)',
+				'rgb(255, 205, 86)'
+				],
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("statusChart");
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: data,
+			options: {
+				scales: {
+				y: {
+					beginAtZero: true
+				}
+				}
+			},
+		});
+    </script>
+
+	<!-- Budget Chart -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<MONTHS.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<MONTHS.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+		var data = {
+			labels: INITIATIVE,
+			datasets: [
+				{
+				label: 'Total',
+				data: dataset1,
+				borderColor: "rgb(255, 99, 132)",
+				backgroundColor: "rgb(255, 167, 287)",
+				},
+				{
+				label: 'Cumulative',
+				data: dataset2,
+				borderColor: "rgb(54, 162, 235)",
+				backgroundColor: "rgb(127, 205, 241)"
+				}
+			]
+		};
+
+		var ctx = document.getElementById("budgetChart");
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				indexAxis: 'y',
+				// Elements options apply to all of the options unless overridden in a dataset
+				// In this case, we are setting the border of each horizontal bar to be 2px wide
+				elements: {
+				bar: {
+					borderWidth: 2,
+				}
+				},
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'right',
+				},
+				title: {
+					display: true,
+					text: 'Budget'
+				}
+				}
+			},
+		});
+    </script>
+
+	<!-- Weekly applications approved Chart -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<WEEKS.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<WEEKS.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+		var data = {
+			labels: WEEKS,
+			datasets: [
+				{
+				label: 'Total applications approved',
+				data: dataset1,
+				borderColor: "rgb(255, 99, 132)",
+				backgroundColor: "rgb(255, 167, 287)",
+				order: 1
+				},
+				{
+				label: 'Total applications received',
+				data: dataset2,
+				borderColor: "rgb(54, 162, 235)",
+				backgroundColor: "rgb(127, 205, 241)",
+				type: 'line',
+				order: 0
+				}
+			]
+		};
+
+		var ctx = document.getElementById("totalAppApprChart");
+		var myChart = new Chart(ctx, 	{
+			type: 'bar',
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'top',
+				},
+				title: {
+					display: true,
+					text: 'Total Applications Received  VS Total Applications Approved'
+				}
+				}
+			},
+		});
+    </script>
+
+	<!-- Total applications approved and received Chart -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<WEEKS.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<WEEKS.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+		var data = {
+			labels: WEEKS,
+			datasets: [
+				{
+				label: 'Total applications approved',
+				data: dataset1,
+				borderColor: "rgb(255, 99, 132)",
+				backgroundColor: "rgb(255, 167, 287)",
+				order: 1
+				},
+				{
+				label: 'Total applications received',
+				data: dataset2,
+				borderColor: "rgb(54, 162, 235)",
+				backgroundColor: "rgb(127, 205, 241)",
+				type: 'line',
+				order: 0
+				}
+			]
+		};
+
+		var ctx = document.getElementById("weeklyAppApprChart");
+		var myChart = new Chart(ctx, 	{
+			type: 'bar',
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'top',
+				},
+				title: {
+					display: true,
+					text: 'Total Applications Received  VS Total Applications Approved'
+				}
+				}
+			},
+		});
+    </script>
+
+	<!-- Cumulative applications approved and received Chart -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<WEEKS.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<WEEKS.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+		var data = {
+			labels: WEEKS,
+			datasets: [
+				{
+				label: 'Cumulative applications approved',
+				data: dataset1,
+				borderColor: "rgb(255, 99, 132)",
+				backgroundColor: "rgb(255, 167, 287)",
+				stack: 'combined',
+				type: 'bar'
+				},
+				{
+				label: 'Cumulative applications received',
+				data: dataset2,
+				borderColor: "rgb(54, 162, 235)",
+				backgroundColor: "rgb(127, 205, 241)",
+				stack: 'combined',
+				}
+			]
+		};
+
+		var ctx = document.getElementById("cumulativeAppApprChart");
+		var myChart = new Chart(ctx, 	{
+			type: 'line',
+			data: data,
+			options: {
+				plugins: {
+				title: {
+					display: true,
+					text: 'Chart.js Stacked Line/Bar Chart'
+				}
+				},
+				scales: {
+				y: {
+					stacked: true
+				}
+				}
+			},
+		});
+    </script>
+
+  </body>
+</html>
