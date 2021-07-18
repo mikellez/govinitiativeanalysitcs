@@ -606,13 +606,14 @@
 		for(var i = 0; i<WEEKS.length;i++) {
 			dataset1.push(getRandomArbitrary(10000, 20000));
 		}
+		var sum = 0;
 		for(var i = 0; i<WEEKS.length;i++) {
 			if(i!=0) {
-				x = dataset2[i-1] + getRandomArbitrary(10000, 20000);
+				sum += getRandomArbitrary(10000, 20000);
 			} else {
-				x = dataset1[0];
+				sum = dataset1[0];
 			}
-			dataset2.push(x);
+			dataset2.push(sum);
 		}
 		var data = {
 			labels: WEEKS,
@@ -668,13 +669,14 @@
 		for(var i = 0; i<WEEKS.length;i++) {
 			dataset1.push(getRandomArbitrary(10000, 20000));
 		}
+		var sum = 0;
 		for(var i = 0; i<WEEKS.length;i++) {
 			if(i!=0) {
-				x = dataset2[i-1] + getRandomArbitrary(10000, 20000);
+				sum += getRandomArbitrary(10000, 20000);
 			} else {
-				x = dataset1[0];
+				sum = dataset1[0];
 			}
-			dataset2.push(x);
+			dataset2.push(sum);
 		}
 		var data = {
 			labels: WEEKS,
