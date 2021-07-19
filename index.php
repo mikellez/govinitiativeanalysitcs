@@ -422,7 +422,7 @@
 								<td class="pt-3-half text-left"><?= $datas[$i]['program']?></td>
 								<td class="pt-3-half text-right"><?= $datas[$i]['peruntukan']?></td>
 								<td class="pt-3-half"><?= $datas[$i]['semak']?></td>
-								<td class="pt-3-half text-right"><?= $datas[$i]['pemberian-kumulatif']?></td>
+								<td class="pt-3-half"><?= $datas[$i]['pemberian-kumulatif']?></td>
 								<td class="pt-3-half text-right"><?= $datas[$i]['kumulatif-jumlah']?></td>
 								<td class="pt-3-half text-right"><?= $datas[$i]['kumulatif-baki']?></td>
 								<?php for($j=0; $j<count($datas[$i]['minggu']); $j++):?>
@@ -1175,17 +1175,17 @@
 								<?php for($i=0; $i<count($datas); $i++):?>
 								<tr>
 								<td class="pt-3-half"><?= $datas[$i]['strategi']?></td>
-								<td class="pt-3-half"><?= $datas[$i]['program']?></td>
-								<td class="pt-3-half"><?= $datas[$i]['peruntukan']?></td>
-								<td class="pt-3-half"></td>
-								<td class="pt-3-half"></td>
-								<td class="pt-3-half"></td>
-								<td class="pt-3-half"></td>
-								<td class="pt-3-half"></td>
-								<td class="pt-3-half"></td>
+								<td class="pt-3-half text-left"><?= $datas[$i]['program']?></td>
+								<td class="pt-3-half text-right"><?= $datas[$i]['peruntukan']?></td>
+								<td class="pt-3-half text-right"></td>
+								<td class="pt-3-half text-right"></td>
+								<td class="pt-3-half text-right"></td>
+								<td class="pt-3-half text-right"></td>
+								<td class="pt-3-half text-right"></td>
+								<td class="pt-3-half text-right"></td>
 								<?php for($j=0; $j<count($datas[$i]['minggu']); $j++):?>
 								<?php for($h=0; $h<4; $h++):?>
-								<td class="pt-3-half" contenteditable="true"></td>
+								<td class="pt-3-half text-right" contenteditable="true"></td>
 								<?php endfor;?>
 								<?php endfor;?>
 								</tr>
@@ -1193,17 +1193,17 @@
 
 								<tr>
 								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark">Total</td>
-								<td class="pt-3-half table-dark">551,060,000.00</td>
-								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark"></td>
+								<td class="pt-3-half table-dark text-left">Total</td>
+								<td class="pt-3-half table-dark text-right">551,060,000.00</td>
+								<td class="pt-3-half table-dark text-right"></td>
+								<td class="pt-3-half table-dark text-right"></td>
+								<td class="pt-3-half table-dark text-right"></td>
+								<td class="pt-3-half table-dark text-right"></td>
+								<td class="pt-3-half table-dark text-right"></td>
+								<td class="pt-3-half table-dark text-right"></td>
 								<?php for($j=0; $j<40; $j++):?>
 								<?php for($h=0; $h<4; $h++):?>
-								<td class="pt-3-half table-dark"></td>
+								<td class="pt-3-half table-dark text-right"></td>
 								<?php endfor;?>
 								<?php endfor;?>
 								</tr>
@@ -1262,18 +1262,18 @@
 								<?php for($i=0; $i<count($datas); $i++):?>
 								<tr>
 								<td class="pt-3-half"><?= $datas[$i]['strategi']?></td>
-								<td class="pt-3-half"><?= $datas[$i]['program']?></td>
-								<td class="pt-3-half"><?= $datas[$i]['peruntukan']?></td>
+								<td class="pt-3-half text-left"><?= $datas[$i]['program']?></td>
+								<td class="pt-3-half text-right"><?= $datas[$i]['peruntukan']?></td>
 								<?php for($j=0; $j<count($datas[$i]['minggu']); $j++):?>
-								<td class="pt-3-half" contenteditable="true"><?= $datas[$i]['minggu'][$i]?></td>
+								<td class="pt-3-half text-right" contenteditable="true"><?= $datas[$i]['minggu'][$i]?></td>
 								<?php endfor;?>
 								</tr>
 								<?php endfor;?>
 
 								<tr>
 								<td class="pt-3-half table-dark"></td>
-								<td class="pt-3-half table-dark">Total</td>
-								<td class="pt-3-half table-dark">551,060,000.00</td>
+								<td class="pt-3-half table-dark text-right">Total</td>
+								<td class="pt-3-half table-dark text-right">551,060,000.00</td>
 								<td class="pt-3-half table-dark"></td>
 								<td class="pt-3-half table-dark"></td>
 								<td class="pt-3-half table-dark"></td>
