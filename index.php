@@ -1675,10 +1675,10 @@
     <script>
 
 		var dataset1 = [], dataset2 = [];
-		for(var i = 0; i<MONTHS.length;i++) {
+		for(var i = 0; i<INITIATIVE.length;i++) {
 			dataset1.push(getRandomArbitrary(10000, 20000));
 		}
-		for(var i = 0; i<MONTHS.length;i++) {
+		for(var i = 0; i<INITIATIVE.length;i++) {
 			dataset2.push(getRandomArbitrary(10000, 20000));
 		}
 		var data = {
