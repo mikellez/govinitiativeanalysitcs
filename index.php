@@ -1390,6 +1390,95 @@
 				</div>
 			</div>
 
+			<div class="row">
+				<div class="col-md-4"> </div>
+				<div class="col-md-4">
+					<canvas class="my-4" id="keseluruhanChart" width="900" height="380"></canvas>
+				</div>
+
+
+
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<canvas class="my-4" id="strategi1Chart" width="900" height="380"></canvas>
+				</div>
+				<div class="col-md-4">
+					<canvas class="my-4" id="strategi2Chart" width="900" height="380"></canvas>
+				</div>
+				<div class="col-md-4">
+					<canvas class="my-4" id="strategi3Chart" width="900" height="380"></canvas>
+				</div>
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="d3Chart" width="900" height="380"></canvas>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="d2Chart" width="900" height="380"></canvas>
+				</div>
+
+				<div class="col-md-12">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="d4Chart" width="900" height="380"></canvas>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="c1Chart" width="900" height="380"></canvas>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="c2Chart" width="900" height="380"></canvas>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="c3Chart" width="900" height="380"></canvas>
+				</div>
+
+				<div class="col-md-12">
+					<select>
+						<option selected="true">Week 1 - Week 8</option>
+						<option>Week 8 - Week 16</option>
+					</select>
+					<canvas class="my-4" id="c4Chart" width="900" height="380"></canvas>
+				</div>
+			</div>
+
         </main>
 
       </div>
@@ -1408,6 +1497,7 @@
 
     <!-- Graphs -->
     <script src="./node_modules/chart.js/dist/chart.js"></script>
+    <script src="./node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"></script>
     <script src="./node_modules/gauge-chart/dist/bundle.js"></script>
 
 	<script>
@@ -1445,9 +1535,58 @@
 			'Week 8',
 		];
 
+		const MINGGU = [
+			'1',
+			'2',
+			'3',
+			'4',
+			'5',
+			'6',
+			'7',
+			'8',
+			'9',
+			'10',
+			'11',
+			'12',
+			'13',
+			'14',
+			'15',
+			'16',
+			'17',
+			'18',
+			'19',
+			'20',
+			'21',
+			'22',
+			'23',
+			'24',
+		];
+
 		const INITIATIVE = [
 			'Program Bakul Makanan',
-			'Bantuan Khas OKU'
+			'Khairat Kematian',
+			'Bantuan Khas OKU',
+			'Moratorium Usahawan Hijrah',
+			'Pembangunan Hotline aduan keganasan rumahtangga',
+			'Penangguhan bayaran balik pinjaman TKWBNS',
+			'Program Tuisyen Rakyat Selangor',
+			'Portal ePTRS',
+			'Penangguhan Sewa PPR & Smart Sewa',
+			'Bantuan Khas Pengusaha & Guru Tadika',
+			'Penangguhan bayaran pinjaman biasiswa YS',
+			'Bantuan mahasiswa Selangor',
+			'Bantuan Kewangan Sektor Pelancongan',
+			'Skim Internet Selangor SISM40',
+			'Data Internet Selangor',
+			'Selangor Advance',
+			'Program Jaminan Bekalan Makanan',
+			'Program Agro Prihatin',
+			'Program Peningkatan Hasil',
+			'Pinjaman Hijrah Selangor',
+			'PLATS Selangor',
+			'Saringan Komuniti C19 Home Assessment Tool Rebat Pengangkutan Pengambilan Vaksin',
+			'Kawalan Kesihatan Tempat Kerja',
+			'Program Vaksinasi C19 Selangor'
 		];
 
 		const red = "rgb(220, 53, 69, 0.5)";
@@ -1856,6 +1995,564 @@
 				}
 			}
 		});
+    </script>
+
+	<!-- PSK 2.0: Keseluruhan Chart -->
+    <script>
+
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<3;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			labels: [
+				'Peruntukan (RM)',
+				'Pemberian (RM)',
+				'Baki (RM)'
+			],
+			datasets: [{
+				label: 'PKS 2.0: Keseluruhan',
+				data: dataset1,
+				backgroundColor: [
+				red,
+				blue,
+				green
+				],
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("keseluruhanChart");
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			plugins: [ChartDataLabels],
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'PKS 2.0: Kesuluruhan'
+					},
+					datalabels: {
+						formatter: (value) => {
+						return parseFloat(value).toFixed(2);value;
+						}
+					}
+				}
+			},
+			});
+    </script>
+
+	<!-- strategi1 -->
+    <script>
+
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<3;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			datasets: [{
+				label: 'Strategi 1',
+				data: dataset1,
+				backgroundColor: [
+				red,
+				blue,
+				green
+				],
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("strategi1Chart");
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			plugins: [ChartDataLabels],
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'top',
+						display: false
+					},
+					title: {
+						display: true,
+						text: 'Strategi 1'
+					},
+					datalabels: {
+						formatter: (value) => {
+						return parseFloat(value).toFixed(2);value;
+						}
+					}
+				}
+			},
+			});
+    </script>
+
+	<!-- strategi2 -->
+    <script>
+
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<3;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			datasets: [{
+				label: 'Strategi 2',
+				data: dataset1,
+				backgroundColor: [
+				red,
+				blue,
+				green
+				],
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("strategi2Chart");
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			plugins: [ChartDataLabels],
+			data: data,
+			options: {
+				responsive: true,
+					plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Strategi 2'
+					},
+					datalabels: {
+						formatter: (value) => {
+						return parseFloat(value).toFixed(2);value;
+						}
+					}
+				}
+			},
+		});
+    </script>
+
+	<!-- strategi3 -->
+    <script>
+
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<3;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			datasets: [{
+				label: 'Strategi 3',
+				data: dataset1,
+				backgroundColor: [
+				red,
+				blue,
+				green
+				],
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("strategi3Chart");
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			plugins: [ChartDataLabels],
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						position: 'top',
+					},
+					title: {
+						display: true,
+						text: 'Strategi 3'
+					},
+					datalabels: {
+						formatter: (value) => {
+						return parseFloat(value).toFixed(2);value;
+						}
+					}
+				}
+			},
+			});
+    </script>
+
+	<!-- JUMLAH PEMBERIAN BANTUAN (JUMLAH BESAR) SETIAP MINGGU-->
+    <script>
+
+		var dataset1 = [], dataset2 = [],dataset3 = [];
+		for(var i = 0; i<MINGGU.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		var sum = 0;
+		for(var i = 0; i<MINGGU.length;i++) {
+			if(i!=0) {
+				sum += getRandomArbitrary(10000, 20000);
+			} else {
+				sum = dataset1[0];
+			}
+			dataset2.push(sum);
+		}
+		var data = {
+				labels: MINGGU,
+				datasets: [{
+				label: 'JUMLAH PEMBERIAN BANTUAN',
+				data: dataset1,
+				borderColor: redBorderColor,
+				backgroundColor: red,
+				hoverOffset: 4,
+				order: 0,
+				yAxisID: 'y',
+				type: 'bar'
+			},{
+				label: 'JUMLAH BESAR',
+				data: dataset2,
+				borderColor: blueBorderColor,
+				backgroundColor: blue,
+				hoverOffset: 4,
+				order: 1,
+				yAxisID: 'y1',
+			}]
+		};
+
+		var ctx = document.getElementById("d2Chart");
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: data,
+			options: {
+				responsive: true,
+				interaction: {
+				mode: 'index',
+				intersect: false,
+				},
+				stacked: false,
+				plugins: {
+				title: {
+					display: true,
+					text: 'JUMLAH PEMBERIAN BANTUAN (JUMLAH BESAR) SETIAP MINGGU'
+				}
+				},
+				scales: {
+				y: {
+					type: 'linear',
+					display: true,
+					position: 'left',
+				},
+				y1: {
+					type: 'linear',
+					display: true,
+					position: 'right',
+
+					// grid line settings
+					grid: {
+					drawOnChartArea: false, // only want the grid lines for one axis to show up
+					},
+				},
+				}
+			},
+			});
+    </script>
+
+	<!-- TAHAP PEMBERIAN (%) KUMULATIF TERKINI MENGIKUT PROGRAM-->
+    <script>
+
+		var dataset1 = [], dataset2 = [],dataset3 = [];
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		var data = {
+			labels: INITIATIVE,
+			datasets: [
+				{
+					label: 'PEMBERIAN (%) KUMULATIF',
+					data: dataset1,
+					borderColor: "rgb(255, 99, 132)",
+					backgroundColor: red,
+				},
+			]
+		};
+
+		var ctx = document.getElementById("d3Chart");
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				plugins: {
+				title: {
+					display: true,
+					text: 'TAHAP PEMBERIAN (%) KUMULATIF TERKINI MENGIKUT PROGRAM'
+				},
+				},
+				responsive: true,
+				scales: {
+				x: {
+					stacked: true,
+				},
+				y: {
+					stacked: true
+				}
+				}
+			}
+		});
+    </script>
+
+	<!-- PEMBERIAN BANTUAN MINGGU INI BERBANDING SEBELUMNYA-->
+    <script>
+
+		var dataset1 = [], dataset2 = [],dataset3 = [];
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		var data = {
+			labels: INITIATIVE,
+			datasets: [
+				{
+					label: 'PEMBERIAN BANTUAN',
+					data: dataset1,
+					borderColor: "rgb(255, 99, 132)",
+					backgroundColor: red,
+				}
+			]
+		};
+
+		var ctx = document.getElementById("d4Chart");
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				plugins: {
+				title: {
+					display: true,
+					text: 'PEMBERIAN BANTUAN MINGGU INI BERBANDING SEBELUMNYA'
+				},
+				},
+				responsive: true,
+				scales: {
+				x: {
+					stacked: true,
+				},
+				y: {
+					stacked: true
+				}
+				}
+			}
+		});
+    </script>
+
+	<!-- C1. PSK 2.0: STATUS PERMOHONAN-->
+    <script>
+
+
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<3;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			labels: [
+				'JP',
+				'A',
+				'T',
+				'P'
+			],
+			datasets: [{
+				label: 'PKS 2.0: STATUS PERMOHONAN',
+				data: dataset1,
+				backgroundColor: [
+				red,
+				blue,
+				green
+				],
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("c1Chart");
+		var myChart = new Chart(ctx, {
+			type: 'doughnut',
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'top',
+				},
+				title: {
+					display: true,
+					text: 'PKS 2.0: STATUS PERMOHONAN'
+				}
+				}
+			},
+			});
+    </script>
+
+	<!-- C2. JUMLAH PEMOHON DAN KECEKAPAN AGIHAN MINGGU TERKINI -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			labels: INITIATIVE,
+			datasets: [{
+				label: 'JUMLAH PEMOHON',
+				data: dataset2,
+				borderColor: blueBorderColor,
+				backgroundColor: blue,
+				hoverOffset: 4,
+				type: 'line',
+				order: 1,
+				},{
+				label: '% AGIHAN',
+				data: dataset1,
+				borderColor: redBorderColor,
+				backgroundColor: red,
+				hoverOffset: 4,
+				order: 0
+			}]
+		};
+
+		var ctx = document.getElementById("c2Chart");
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'top',
+				},
+				title: {
+					display: true,
+					text: 'JUMLAH PEMOHON DAN KECEKAPAN AGIHAN MINGGU TERKINI'
+				}
+				}
+			},
+			});
+    </script>
+
+	<!-- C3. JUMLAH PEMOHON DAN AGIHAN MINGGU TERKINI -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+			labels: INITIATIVE,
+				datasets: [{
+				label: 'JUMLAH PEMOHON',
+				data: dataset1,
+				borderColor: redBorderColor,
+				backgroundColor: red,
+				hoverOffset: 4
+			},{
+				label: 'JUMLAH AGIHAN',
+				data: dataset2,
+				borderColor: blueBorderColor,
+				backgroundColor: blue,
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("c3Chart");
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				indexAxis: 'y',
+				// Elements options apply to all of the options unless overridden in a dataset
+				// In this case, we are setting the border of each horizontal bar to be 2px wide
+				elements: {
+				bar: {
+					borderWidth: 2,
+				}
+				},
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'right',
+				},
+				title: {
+					display: true,
+					text: 'JUMLAH PEMOHON DAN AGIHAN SETIAP PROGRAM (TERKINI)'
+				}
+				}
+			},
+			});
+    </script>
+
+	<!-- C4. PERBANDINGAN JUMLAH PERMOHONAN & JUMLAH AGIHAN SETIAP PROGRAM (MINGGU TERKINI VS MINGGU SEBELUMNYA -->
+    <script>
+
+		var dataset1 = [], dataset2 = [];
+		var dataset1 = [], dataset2 = [];
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset1.push(getRandomArbitrary(10000, 20000));
+		}
+		for(var i = 0; i<INITIATIVE.length;i++) {
+			dataset2.push(getRandomArbitrary(10000, 20000));
+		}
+
+		var data = {
+				labels: INITIATIVE,
+				datasets: [{
+				label: '% PERMOHONAN',
+				data: dataset1,
+				borderColor: redBorderColor,
+				backgroundColor: red,
+				hoverOffset: 4
+			},{
+				label: '% AGIHAN',
+				data: dataset2,
+				borderColor: blueBorderColor,
+				backgroundColor: blue,
+				hoverOffset: 4
+			}]
+		};
+
+		var ctx = document.getElementById("c4Chart");
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+				legend: {
+					position: 'top',
+				},
+				title: {
+					display: true,
+					text: 'PERBANDINGAN JUMLAH PERMOHONAN DAN JUMLAH AGIHAN SETIAP PROGRAM (% MINGGU TERKINI BERBANDING MINGGU SEBELUMNYA)'
+				}
+				}
+			},
+			});
     </script>
 
 

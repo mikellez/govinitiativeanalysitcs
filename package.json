@@ -1,0 +1,28 @@
+{
+  "name": "govinitiativeanalysitcs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "chart.js": "^3.4.1",
+    "chartjs": "^0.3.24",
+    "chartjs-plugin-datalabels": "^2.0.0",
+    "feather-icons": "^4.28.0",
+    "gauge-chart": "^0.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikellez/govinitiativeanalysitcs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikellez/govinitiativeanalysitcs/issues"
+  },
+  "homepage": "https://github.com/mikellez/govinitiativeanalysitcs#readme"
+}
